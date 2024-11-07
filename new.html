@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page one </title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Navbar styling */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #222;
+            padding: 15px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        /* Link styling */
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+            display: inline-block;
+            transition: color 0.4s ease;
+        }
+
+        /* Hover effect */
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Animated slide effect */
+        nav ul li a::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ff6347;
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Content styling */
+        .content {
+            padding: 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #111111, #52f805, #030303);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+ }
+        .content h1 {
+            font-size: 3em;
+            color: #ffffff;
+        }
+        .content p {
+            color: #ff0000;
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin-top: 20px;
+        }
+        
+        .logout a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 15px;
+    background-color: #222;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  
+}
+
+.logout a:hover {
+    background-color: #ff0000;
+    color: #020202;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .text{
+      position: absolute;
+      top: 25px;
+      left: 60px;
+      color: rgb(0, 37, 247);
+      font-size: larger;
+      stroke: rgb(255, 255, 255);
+    }
+   
+    .logo img {
+      height: 50px;
+    }
+    
+    /* Custom select container */
+    .custom-select {
+      position: relative;
+      display: inline-block;
+      width: 250px;
+      margin: 0%;
+      padding: 0%;
+    }
+
+    /* Styled select dropdown */
+    .custom-select select {
+      appearance: none;
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    /* Hover effect for the select */
+    .custom-select select:hover {
+      background: linear-gradient(135deg, #5e0dc2 0%, #1b65e5 100%);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Arrow icon styling */
+    .custom-select::after {
+      content: "▼";
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #fff;
+      pointer-events: none;
+    }
+
+    /* Style options list */
+    .custom-select select option {
+      background-color: #fff;
+      color: #333;
+    }
+    .ab h1 {
+    color: #ff6347; /* Change text color */
+    font-size: 36px; /* Adjust font size */
+    text-align: center; /* Align text */
+    background-color: #000000;
+  
+  }
+  .ab img {
+    width: 420px;
+    height: auto;
+
+
+  }
+  .ab h2{
+    color: red;
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+  }
+  pre{
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  .open-video-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Modal background */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Modal content */
+        .video-content {
+            position: relative;
+            width: 560px;
+            max-width: 90%;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background-color: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <div class="logout">
+              <a href="login.html">Log Out</a>
+          </div>
+          <div class="logo">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg" alt="Logo">
+          
+          </div>
+            <div class="text">
+                <pre> Netflix_Nepali.com </pre>
+            </div>
+        </ul>
+    </nav>
+<hr>
+    <div class="content" id="home">
+        <h1>Welcome to Nepali_Netflix.com </h1>
+        <pre>www.np_netflix.new.movie.com</pre>
+         <p>तल स्क्रोल गर्नुहोस् र नयाँ चलचित्र तथा सिरिज हेर्नुहोस्! (Scroll down to see new movies and series!)</p>
+    </div>
+<hr>
+<div class="custom-select">
+  <select onchange="window.location.href=this.value;">
+    <option value="none" disabled selected>Select a movie category</option>
+    <option value="new.html">New Movie</option>
+    <option value="Popular.html">Popular Movie</option>
+    <option value="Classics.html">Classics Movie</option>
+  </select>
+</div>
+  <br>
+<br>
+<hr>
+<div class="ab">
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/kQZq8KrtQJ0?si=vAMsvqZ_8IVD1ijV" title="YouTube video player" frameborder="0" allow="accelerometer; none; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/FKTLPAzZ44U?si=Z72fzk70ywFSGMaB" title="YouTube video player" frameborder="0" allow="accelerometer; none; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/Sv54RX3Hv5Q?si=ht6q9l26lBXaJwTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/Sy5x1Nwm4mw?si=JzIe_nRqzg9jVyqk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/7WR3qzB40V8?si=EEfwkiEQArxn7W4z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/jw-pogHnK8o?si=tHEBOD2yaNPnqTr2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/u4Vc3EnXhZg?si=2uDfKRPgWl7btYJ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/kduKxgi2aYk?si=7og8yd0eMDhweGVE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/zIuxR8xo8dw?si=_wRdnm_7fvgketi-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  
+  
+  <br>
+<br>
+<br>
+
+</div>
+
+
+  <script>
+    document.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
+  </script>
+</body>
+</html>
